@@ -3,6 +3,28 @@ Vowpal Etudes
 
 A short description of the project.
 
+How to run the development environment?
+------------------------------------
+
+1. Build docker image
+`docker build -t vowpal_etudes .`
+
+2. Run docker image
+```
+docker run \
+--name vowpal_etudes_container \
+-v .:/src \
+-w /src \
+-p 8888:8888 \
+vowpal_etudes
+```
+
+
+
+
+
+
+
 Project Organization
 ------------
 
