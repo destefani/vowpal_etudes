@@ -1,11 +1,18 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
-// README at: https://github.com/devcontainers/templates/tree/main/src/miniconda
+// README at: https://github.com/devcontainers/templates/tree/main/src/python
 {
-	"name": "Vowpall Etudes",
-	"build": { 
-		"context": "..",
-		"dockerfile": "Dockerfile"
-	},
+	"name": "Python 3",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	"image": "mcr.microsoft.com/devcontainers/python:1-3.9-bookworm",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-toolsai.jupyter",
+				"ms-python.isort",
+				"ms-python.flake8"
+			]
+		}
+	}
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
@@ -14,19 +21,11 @@
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "conda init && make create_environment && conda activate vowpal_etudes",
+	"postCreateCommand": "pip install --upgrade pip && pip install --user -r requirements.txt",
 
 	// Configure tool-specific properties.
-	"customizations": {
-		"vscode": {
-			"extensions": ["ms-python.python", "ms-toolsai.jupyter", "ms-python.vscode-pylance", "github.copilot"]
-		}
-	},
+	// "customizations": {},
 
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root"
-
-	"containerEnv": {
-		"WANDB_API_KEY": "${localEnv:WANDB_API_KEY}"
-	}
 }
