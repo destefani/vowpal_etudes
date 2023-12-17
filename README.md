@@ -1,29 +1,8 @@
 Vowpal Etudes
+[![Open in Dev Containers](https://img.shields.io/static/v1?label=Dev%20Containers&message=Open&color=blue&logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/destefani/vowpal_etudes)
 ==============================
 
 A short description of the project.
-
-How to run the development environment?
-------------------------------------
-
-1. Build docker image
-`docker build -t vowpal_etudes .`
-
-2. Run docker image
-```
-docker run \
---name vowpal_etudes_container \
--v .:/src \
--w /src \
--p 8888:8888 \
-vowpal_etudes
-```
-
-
-
-
-
-
 
 Project Organization
 ------------
